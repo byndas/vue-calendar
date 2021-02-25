@@ -1,8 +1,19 @@
 <template>
   <div>
-    <div :for="week in weeks">
-      WEEK
-      <calendar-day :for="day in week" :day="day">{{ day }}</calendar-day>
+    <div id="day-bar">
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+      <div>Sun</div>
+    </div>
+    <div id="calendar">
+      <div :for="week in weeks" class="calendar-week">
+        WEEK
+        <calendar-day :for="day in week" :day="day">{{ day }}</calendar-day>
+      </div>
     </div>
   </div>
 </template>
