@@ -22,13 +22,14 @@
 import CalendarDay from "./CalendarDay";
 
 export default {
-  data() {
-    return {
-      month: 2,
-      year: 2020
-    };
-  },
   computed: {
+    month() {
+      return this.$store.state.currentMonth
+    },
+      year() {
+        return this.$store.state.currentYear
+      }
+    },
     // algorithm to display days in month
     days() {
       // generating all days in current month
