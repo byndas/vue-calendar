@@ -1,9 +1,6 @@
 import Vue from "vue";
 import ".styles.scss";
 
-import Vuex from "vuex";
-Vue.use(Vuex);
-
 import moment from "moment-timezone";
 // ensures all users see their timezone
 moment.tz.setDefault("UTC");
@@ -22,11 +19,5 @@ new Vue({
   },
   components: {
     App
-  },
-  store: {
-    state: {
-      currentYear: 2021,
-      currentMonth: 2
-    }
   }
 });

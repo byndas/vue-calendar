@@ -23,21 +23,22 @@
         <calendar-day :for="day in week" :day="day">{{ day }}</calendar-day>
       </div>
     </div>
+    <event-form></event-form>
   </div>
 </template>
 
 <script>
 import CalendarDay from "./CalendarDay.vue";
 import CurrentMonth from "./CurrentMonth.vue";
+import EventForm from "./EventForm";
 
 export default {
   computed: {
     month() {
-      return this.$store.state.currentMonth
+      return this.$store.state.currentMonth;
     },
-      year() {
-        return this.$store.state.currentYear
-      }
+    year() {
+      return this.$store.state.currentYear;
     },
     // algorithm to display days in month
     days() {
@@ -84,11 +85,13 @@ export default {
           week = [];
         }
       }
+      return weeks;
     }
   },
   components: {
     CalendarDay,
-    CurrentMonth
+    CurrentMonth,
+    EventForm
   }
 };
 </script>
