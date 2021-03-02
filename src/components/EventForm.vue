@@ -14,7 +14,7 @@
         <button @click="create">Create</button>
       </div>
     </div>
-    <button id="close-button">&#10005</button>
+    <button id="close-button">&#10005;</button>
   </div>
 </template>
 
