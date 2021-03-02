@@ -1,3 +1,6 @@
 {
-    "workbench.colorTheme": "Sepia from Cuttlefish"
+    "workbench.colorTheme": "Sepia from Cuttlefish",
+    "cSpell.words": [
+        "vuex"
+    ]
 }
