@@ -1,7 +1,7 @@
 import moment from "moment";
 moment.tz.setDefault("UTC");
 
-import Axios from 'axios';
+import Axios from "a1xios";
 
 import Vue from "vue";
 import Vuex from "vuex";
@@ -44,16 +44,16 @@ export default new Vuex.Store({
         let obj = {
           description: payload,
           date: context.state.eventFormDate
-        }
-        Axios.post('/add_event', obj).then(response => {
+        };
+        Axios.post("/add_event", obj).then(response => {
           if (response.status === 200) {
-            context.commit('addEvent', obj);
+            context.commit("addEvent", obj);
             resolve();
           } else {
             reject();
           }
         });
-      })
+      });
     }
   }
 });
