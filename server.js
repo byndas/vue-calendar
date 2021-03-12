@@ -14,8 +14,7 @@ moment.tz.setDefault("UTC");
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-let events = [
-  {
+let events = [{
     description: "Random event 1",
     date: moment("2020-11-05", "YYY-MM-DD")
   },
@@ -50,9 +49,12 @@ if (process.env.NODE_ENV === "development") {
   const reload = require("reload");
   const reloadServer = reload(server, app);
   require("./webpack-dev-middleware").init(app);
+  require("./webpack-server-compiler").init(function (bundle) {
+
+  });
 }
 
-server.listen(process.env.PORT, function() {
+server.listen(process.env.PORT, function () {
   console.log(`Example app listening on port ${process.env.PORT}!`);
   if (process.env.NODE_ENV === "development") {
     require("open")(`http://localhost:${process.env.PORT}`);
