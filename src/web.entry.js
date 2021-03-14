@@ -7,6 +7,6 @@ let events = window.__INITIAL_STATE__.map(event => {
   };
 });
 
-import VueCalendar from "./entry.js"
+import VueCalendar from "./entry.js";
 
 VueCalendar(events).$mount("#app");

@@ -5,6 +5,7 @@ import store from "./store";
 import moment from "moment-timezone";
 // ensures all users see their timezone
 moment.tz.setDefault("UTC");
+
 Object.defineProperty(Vue.prototype, "$moment", {
     get() {
         return this.$root.moment;
@@ -14,11 +15,9 @@ Object.defineProperty(Vue.prototype, "$moment", {
 import App from ".components/App.vue";
 
 export default function (events) {
-
     let initialState = Object.assign({}, store.state, {
         events
     });
-
     store.replaceState(initialState);
 
     return new Vue({
