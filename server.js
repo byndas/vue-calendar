@@ -14,6 +14,14 @@ moment.tz.setDefault("UTC");
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 
+let renderer;
+
+if (process.env.NODE_ENV === 'production') {
+  let bundle = fs.readFileSync("./dist/node.bundle.js", "utf-8");
+  renderer = require('vue-server-renderer').createBundleRenderer(bundle);
+  app.use("/dist", express.static(path.join(__dirname, "public")));
+}
+
 let events = [{
     description: "Random event 1",
     date: moment("2020-11-05", "YYY-MM-DD")
@@ -24,7 +32,6 @@ let events = [{
   }
 ]; // dummy data
 
-let renderer;
 
 app.get("/", (req, res) => {
   let template = fs.readFileSync(path.resolve("./index.html"), "utf-8");
