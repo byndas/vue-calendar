@@ -1,7 +1,7 @@
 import moment from "moment";
 moment.tz.setDefault("UTC");
 
-import Axios from "a1xios";
+import Axios from "axios";
 
 import Vue from "vue";
 import Vuex from "vuex";
